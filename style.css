@@ -1,0 +1,287 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #C2CAD9;
+    padding: 1rem;
+    color: black;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+
+/* Navbar link hover effect */
+.nav-links a {
+    position: relative; /* Required for the pseudo-element positioning */
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.nav-links a::after {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute; /* Absolute positioning */
+    left: 0; /* Align to the left edge of the link */
+    bottom: -2px; /* Position below the text */
+    width: 0; /* Initial width */
+    height: 2px; /* Thickness of the underline */
+    background-color: #007bff; /* Blue color for the underline */
+    transition: width 0.3s ease; /* Smooth transition */
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+
+/* Hamburger Menu for mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.3rem;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        height: 100vh;
+        width: 200px;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+/*Hero-section*/
+/* styles.css */
+.carousel-item {
+    position: relative;
+    height: 100vh; /* Full height of the viewport */
+    min-height: 400px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire slide */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+}
+
+.carousel-caption h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.carousel-caption p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.carousel-caption .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background for arrows */
+}
+
+.carousel-indicators button {
+    background-color: #fff;
+}
+
+.carousel-indicators .active {
+    background-color: #000;
+}
+.major-attraction {
+    position: relative;
+    padding-bottom: 10px; 
+}
+
+.major-attraction::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 15%; /* Adjust width of the underline */
+    height: 5px; /* Adjust thickness of the underline */
+    background-color: red; /* Change to your preferred color */
+    border-radius: 5px; /* Optional: adds rounded corners to the underline */
+
+}
+/*Facilities*/
+#facilities {
+    background-color:#F5F5F5; /* Light background color */
+}
+
+.major-attractions-heading {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.major-attractions-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 5px;
+    background-color: red; /* Underline color */
+    border-radius: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.fs-3 {
+    font-size: 0.5rem; /* Adjust icon size */
+}
+
+.text-primary {
+    color:blue; /* Primary color for icons */
+}
+
+#facilities p {
+    margin-top: 10px;
+    font-size: rem;
+}
+/*How to reach*/
+#how-to-reach {
+   background-color: #6D12B2;
+   & h2{
+    color: white;
+   }
+}
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Map styling */
+.map-container {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+/*Footer*/
+footer {
+    background-color: #343a40;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .fa {
+    color: #fff;
+}
+
+footer .fa:hover {
+    color: #f8f9fa;
+}
+
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer .row {
+        text-align: center;
+    }
+}
